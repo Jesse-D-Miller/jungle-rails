@@ -7,7 +7,7 @@
     <br>
     <p><%= product.description %></p>
   </td>
-  <td>
+  <td class="price">
     <%= product.price %>
   </td>
   <td>
@@ -17,7 +17,7 @@
     <%= button_to add_item_cart_path(product_id: product.id), class: 'btn btn-xs btn-success' do %> + <% end %>
     </div>
   </td>
-  <td>
+  <td class="price">
     <%= product.price * quantity %>
   </td>
 </tr>

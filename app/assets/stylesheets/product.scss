@@ -54,15 +54,24 @@
     p {
       text-align: justify;
     }
-    .quantity,
-    .price {
+    .quantity-price {
       display: flex;
-      justify-content: center;
-      flex-direction: column;
+      justify-content: flex-end;
+      flex-direction: row;
       align-items: flex-end;
       text-align: right;
       font-weight: 700;
     }
+    .price {
+      margin-left: 0.3em;
+      color: rgba(0, 130, 29, 0.7);
+    }
+
+    .button-container {
+      display: flex;
+      align-items: flex-end;
+    }
+
     button {
       width: 140px;
       font-size: 1em;
