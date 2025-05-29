@@ -1,0 +1,21 @@
+<tr>
+  <td>
+    <%= image_tag line_item.product.image.tiny.url %>
+  </td>
+  <td>
+    <h4><%= line_item.product.name %></h4>
+    <br>
+    <p><%= line_item.product.description %></p>
+  </td>
+  <td class="price">
+    <%= line_item.product.price %>
+  </td>
+  <td>
+    <div>
+      <%= line_item.quantity %>
+    </div>
+  </td>
+  <td class="price">
+    <%= line_item.product.price * line_item.quantity %>
+  </td>
+</tr>
