@@ -24,7 +24,7 @@
         <% end %>
         <div>
           <% order_total = @order.line_items.sum(&:total_price) %>
-          <p>Order Total: <%= number_to_currency(order_total) %></p>
+          <span>Order Total: </span> <span class="price"> <%= number_to_currency(order_total) %> </span>
           <p>A receipt has been sent to <%= @order.email %> </p> 
         </div>
       </tbody>
