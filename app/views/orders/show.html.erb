@@ -7,9 +7,41 @@
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
 
-    <% @order.line_items.each do |line_item| %>
-      <%= render partial: 'line_item', locals: { line_item: line_item } %>
-    <% end %>
+    <table class="table table-bordered">
+
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @order.line_items.each do |line_item| %>
+          <%= render partial: 'line_item', locals: { line_item: line_item } %>
+        <% end %>
+        <div>
+          <% order_total = @order.line_items.sum(&:total_price) %>
+          <p>Order Total: <%= number_to_currency(order_total) %></p>
+          <p>A receipt has been sent to <%= @order.email %> </p> 
+        </div>
+      </tbody>
+
+      <tfoot>
+        <tr>
+          <th colspan="4">
+            TOTAL:
+          </th>
+          <th class="price" >
+            <% order_total = @order.line_items.sum(&:total_price) %>
+            <p><%= number_to_currency(order_total) %></p>
+          </th>
+        </tr>
+      </tfoot>
+
+    </table>
   </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
