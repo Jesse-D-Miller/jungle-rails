@@ -5,8 +5,12 @@ class OrdersController < ApplicationController
   end
 
   def create
+    puts "Stripe Publishable Key: #{ENV['STRIPE_PUBLISHABLE_KEY']}"
+    puts "Stripe Secret Key: #{ENV['STRIPE_SECRET_KEY']}"
+
     charge = perform_stripe_charge
     order  = create_order(charge)
+
 
     if order.valid?
       empty_cart!
