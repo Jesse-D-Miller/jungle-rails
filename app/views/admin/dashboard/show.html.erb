@@ -1,2 +1,21 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<div class="container mt-4"> #container = bootstrap wizardry (centres + padding) mt-4 add 4 units top margin
+  <h1>Admin Dashboard</h1>
+  <div class="row mt-4"> #row puts elements in a row
+    <div class="col-md-6"> #column 1/2 in row 1
+      <div class="card text-white bg-primary mb-3"> #card is bootstrap pre-styled card, bg = background
+        <div class="card-header">Products</div>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to "#{@product_count} Products", admin_products_path, class: "text-white text-decoration-none" %></h5>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card text-white bg-success mb-3">
+        <div class="card-header">Categories</div>
+        <div class="card-body">
+          <h5 class="card-title"><%= link_to "#{@category_count} Categories", admin_products_path, class: "text-white text-decoration-none" %></h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
