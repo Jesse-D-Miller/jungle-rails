@@ -1,11 +1,33 @@
-<h1>Signup</h1>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="mb-4 text-center">Signup</h1>
 
-<%= form_for :user, url '/users' do |f| %>
-  
-  Name: <%= f.text_field :name %>
-  Email: <%= f.text_field :email %>
-  Password <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+      <%= form_for :user, url: '/users', html: { class: 'card p-4 shadow-sm' } do |f| %>
+        <div class="mb-3">
+          <%= f.label :name, "Name", class: "form-label" %>
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
 
-  <% end %>
+        <div class="mb-3">
+          <%= f.label :email, "Email", class: "form-label" %>
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :password, "Password", class: "form-label" %>
+          <%= f.password_field :password, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :password_confirmation, "Password Confirmation", class: "form-label" %>
+          <%= f.password_field :password_confirmation, class: "form-control" %>
+        </div>
+
+        <div class="d-grid">
+          <%= f.submit "Submit", class: "btn btn-success" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
