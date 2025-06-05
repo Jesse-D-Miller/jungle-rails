@@ -23,6 +23,14 @@ Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
 
+## Final Product
+
+!["Screenshot of title"](https://github.com/Jesse-D-Miller/jungle-rails/blob/master/docs/jungle_title.png)
+
+!["Screenshot of front page product cards"](https://github.com/Jesse-D-Miller/jungle-rails/blob/master/docs/jungle_front_page.png)
+
+!["Screenshot of cart"](https://github.com/Jesse-D-Miller/jungle-rails/blob/master/docs/jungle_cart.png)
+
 ## Dependencies
 
 - Rails 6.1 [Rails Guide](http://guides.rubyonrails.org/v6.1/)
